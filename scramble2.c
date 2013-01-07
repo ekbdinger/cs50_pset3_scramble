@@ -257,7 +257,7 @@ void draw(void)
         for (int j =0; j < 4; j++)
         {
             // print value
-            printf("%c", grid[i][j]);
+            printf("%c ", grid[i][j]);
 
         }
     /*        printf("\n%c", grid[0][0]);
