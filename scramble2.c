@@ -15,7 +15,7 @@
 #include <libgen.h>
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
+#include <time.h>   // allows you to keep track of time
 
 // duration of a game in seconds
 #define DURATION 30
@@ -33,10 +33,10 @@
 // http://www.becomeawordgameexpert.com/wordlists.htm
 #define DICTIONARY "words"
 
-// for logging
+// for logging, for automating tests of the code
 FILE* log;
 
-// grid
+// grid, stores letters in the game
 char grid[DIMENSION][DIMENSION];
 
 // flags with which we can mark grid's letters while searching for words
@@ -59,7 +59,7 @@ struct
 }
 dictionary;
 
-// prototypes
+// function prototypes
 void clear(void);
 bool crawl(string letters, int x, int y);
 void draw(void);
@@ -114,7 +114,7 @@ int main(int argc, string argv[])
     // calculate time of game's end
     int end = time(NULL) + DURATION;
 
-    // open log
+    // open log.  Don't alter 
     log = fopen("log.txt", "w");
     if (log == NULL)
     {
@@ -192,7 +192,7 @@ int main(int argc, string argv[])
  */
 void clear()
 {
-    printf("\033[2J");
+    printf("\033[2J");   // escape code, don't worry about it
     printf("\033[%d;%dH", 0, 0);
 }
 
@@ -248,6 +248,19 @@ bool crawl(string letters, int x, int y)
 void draw(void)
 {
     // TODO
+
+    // cycle through every row
+    for (int i = 0; i < 4; i++)
+    {
+        // cycle through evey column
+        for (int j =0; j < 4; j++)
+        {
+            // print value
+            printf("%c", grid[i][j]);
+        }
+    }
+
+
 }
 
 /**
@@ -260,7 +273,7 @@ bool find(string s)
         return false;
 
     // search grid for word
-    for (int row = 0; row < DIMENSION; row++)
+    for (int row = 0; row < DIMENSION; row++)   
     {
         for (int col = 0; col < DIMENSION; col++)
         {
