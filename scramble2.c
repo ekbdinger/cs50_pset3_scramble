@@ -252,14 +252,23 @@ void draw(void)
     // cycle through every row
     for (int i = 0; i < 4; i++)
     {
+        printf("\n");
         // cycle through evey column
         for (int j =0; j < 4; j++)
         {
             // print value
             printf("%c", grid[i][j]);
-        }
-    }
 
+        }
+    /*        printf("\n%c", grid[0][0]);
+            printf("\n%c", grid[1][0]);
+            printf("\n%c", grid[2][0]);
+            
+            printf("\n%c", grid[3][0]);
+           */
+    }
+        printf("\n");
+        printf("\n");
 
 }
 
