@@ -247,7 +247,7 @@ bool crawl(string letters, int x, int y)
  */
 void draw(void)
 {
-    // TODO
+    // I wrote this part
 
     // cycle through every row
     for (int i = 0; i < 4; i++)
@@ -403,6 +403,19 @@ bool lookup(string s)
 {
     // TODO
     return false;
+
+    // linear search example from me
+/*
+    
+        linearSearch(key, array[]):
+
+                for (i = 0; i < length(array); i++):
+                            if (array[i]) == key);
+                                            return i
+
+                                                    return -1  
+*/
+   
 }
 
 /**
